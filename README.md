@@ -2,6 +2,8 @@
 
 Site estático de revisão de Ciências da Natureza e Matemática. O progresso fica no navegador e pode ser transferido entre aparelhos por um arquivo JSON.
 
+[Abrir o Radar publicado](https://jhcavalca40-star.github.io/radar-enem-2026/)
+
 ## Abrir a prévia
 
 Abra a pasta `radar-enem-2026` no Codex. No terminal da pasta, execute:
@@ -20,10 +22,10 @@ Acesse [a prévia local](http://127.0.0.1:8765/). Use o mesmo endereço e a mesm
 - `docs/dados/` contém as fichas e os registros do Radar. Em `fontes.js`, cada PDF pode receber uma URL HTTPS quando for liberado.
 - `docs/imagens/` contém as marcas e os 80 recortes. Cada recorte é solicitado quando a questão correspondente é aberta.
 
-## Publicar e atualizar
+## Publicar uma atualização
 
-1. No GitHub, crie o repositório público `radar-enem-2026` e envie este `README.md` e a pasta `docs` inteira para a branch `main`.
-2. Em **Settings → Pages**, selecione **Deploy from a branch**, depois **main** e **/docs**. Salve.
-3. Abra a URL exibida em **Visit site** numa janela anônima e teste as duas áreas. Para atualizar, envie as alterações para a mesma branch.
+1. Clone o repositório e abra a pasta clonada no Codex. [Repositório do Radar](https://github.com/jhcavalca40-star/radar-enem-2026)
+2. Edite e teste a prévia local. Envie as alterações para a branch `main`. O GitHub Pages publica o conteúdo de `/docs`.
+3. Confira a implantação na aba **Actions** e teste as duas áreas do site em uma janela anônima.
 
 O HTML original e os cinco PDFs ficam na pasta irmã `acervo-local`. Envie ao GitHub somente o conteúdo deste projeto. [Documentação do GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
