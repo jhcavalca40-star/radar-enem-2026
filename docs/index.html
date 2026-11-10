@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Radar ENEM 2026 · Natureza e Matemática</title>
+  <meta name="description" content="Plano de revisão, temas, gráficos e questões do segundo dia do ENEM 2026.">
+  <link rel="icon" href="imagens/radar.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/identidade.css">
+  <link rel="stylesheet" href="css/web.css">
+  <script defer src="dados/natureza.js"></script>
+  <script defer src="dados/matematica.js"></script>
+  <script defer src="dados/fontes.js"></script>
+  <script defer src="js/progresso.js"></script>
+  <script defer src="js/natureza.js"></script>
+  <script defer src="js/movimento.js"></script>
+  <script defer src="js/matematica.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#radarContent">Pular para o Radar</a>
+
+<main class="wrap" id="radarContent">
+  <header class="radar-masthead">
+    <div class="brand-signature">
+      <div class="brand-marks">
+        <img class="brand-lockup" src="imagens/marcas.png" width="2214" height="460" alt="Heron Andrade, em parceria com Atlas Zênite e Apeiron">
+        <div class="brand-math-partner" id="brandMathPartner" hidden>
+          <span>Em parceria com</span>
+          <div class="brand-partner-lockup">
+            <img src="imagens/geraldo-silveira.webp" width="2172" height="724" alt="Geraldo Silveira Matemática" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+      <span class="brand-edition">Caderno de revisão<br><b>ENEM 2026</b></span>
+    </div>
+    <div class="brand-cover">
+      <div class="brand-copy">
+        <p class="eyebrow">Revisão de reta final · 2º dia</p>
+        <h1>Radar ENEM 2026</h1>
+        <p class="brand-area" id="brandArea">Ciências da Natureza</p>
+        <p class="brand-description" id="brandDescription">Física, Química e Biologia em um plano de quatro dias.</p>
+      </div>
+      <div class="brand-radar-shell" id="brandRadar" data-running="false">
+      <svg class="brand-radar" viewBox="0 0 280 280" aria-hidden="true" focusable="false">
+        <defs><linearGradient id="radarBeam" x1="0%" x2="100%"><stop offset="0" stop-color="#ff3300" stop-opacity="0"/><stop offset="1" stop-color="#ff7956" stop-opacity=".43"/></linearGradient></defs>
+        <g fill="none" stroke="#3b3b3b" stroke-width="1.2">
+          <path d="M140 7v266M7 140h266"/>
+          <circle cx="140" cy="140" r="33"/><circle cx="140" cy="140" r="67"/><circle cx="140" cy="140" r="100"/>
+          <circle cx="140" cy="140" r="133" stroke="#ff3300"/>
+        </g>
+        <g class="radar-sweep">
+          <path d="M140 140 38 55A133 133 0 0 1 140 7Z" fill="url(#radarBeam)"/>
+          <path d="M140 140V7" stroke="#ff9a7e" stroke-width="1.3"/>
+        </g>
+        <circle cx="140" cy="140" r="3" fill="#ff7956"/>
+        <g class="radar-contact" style="--phase:.23s;color:#d466e8"><circle class="radar-echo" cx="168" cy="33" r="7"/><circle class="radar-point" cx="168" cy="33" r="5"/></g>
+        <g class="radar-contact" style="--phase:5.13s;color:#ff8a66"><circle class="radar-echo" cx="97" cy="66" r="7"/><circle class="radar-point" cx="97" cy="66" r="5"/></g>
+        <g class="radar-contact" style="--phase:.86s;color:#ff5634"><circle class="radar-echo" cx="183" cy="110" r="7"/><circle class="radar-point" cx="183" cy="110" r="5"/></g>
+        <g class="radar-contact" style="--phase:3.58s;color:#a47bff"><circle class="radar-echo" cx="51" cy="215" r="7"/><circle class="radar-point" cx="51" cy="215" r="5"/></g>
+        <g class="radar-contact" style="--phase:2.33s;color:#ff5634"><circle class="radar-echo" cx="176" cy="202" r="7"/><circle class="radar-point" cx="176" cy="202" r="5"/></g>
+      </svg>
+        <button type="button" id="radarMotionToggle" class="radar-motion-toggle"><span aria-hidden="true" class="radar-motion-dot"></span><span>Pausar varredura</span></button>
+      </div>
+    </div>
+    <nav class="view-nav" aria-label="Área do radar">
+      <span class="brand-nav-label">Área de estudo</span>
+      <div class="seg" role="group" aria-label="Escolher área">
+        <button type="button" data-panel="nature" aria-controls="naturePanel" aria-pressed="true">Natureza</button>
+        <button type="button" data-panel="math" aria-controls="mathPanel" aria-pressed="false">Matemática</button>
+      </div>
+    </nav>
+    <nav class="brand-shortcuts" id="coverShortcuts" aria-label="Destaques da área"></nav>
+  </header>
+
+  <section class="progress-transfer" aria-labelledby="progressTitle">
+    <div>
+      <h2 id="progressTitle">Leve seu progresso com você</h2>
+      <p class="lead">O arquivo inclui Natureza e Matemática. A importação soma os temas revisados às marcações deste navegador.</p>
+    </div>
+    <div class="progress-actions">
+      <button type="button" class="math-action" id="exportProgress">Exportar progresso</button>
+      <button type="button" class="math-action" id="importProgress">Importar progresso</button>
+      <input type="file" id="progressFile" hidden>
+    </div>
+    <p class="progress-message" id="progressMessage" role="status"></p>
+  </section>
+  <noscript><p>Ative o JavaScript do navegador para usar os filtros, abrir fichas e salvar o progresso.</p></noscript>
+
+  <div id="naturePanel" class="radar-panel">
+<header class="radar-overview">
+  <div class="section-head panel-heading">
+    <span class="eyebrow">Ciências da Natureza</span>
+    <h2>Progresso da revisão</h2>
+    <p class="lead">Marque os temas de Física, Química e Biologia conforme você revisar. O progresso fica salvo neste navegador.</p>
+  </div>
+  <div class="stats">
+    <div class="stat"><b id="sTotal">75</b><span>temas no radar</span></div>
+    <div class="stat"><b id="sMP">41</b><span>muito prováveis</span></div>
+    <div class="stat"><b id="sDone">0</b><span>revisados</span></div>
+    <div class="progress"><div class="bar"><i id="pAll"></i></div><span class="count" id="pTxt">0% do radar revisado</span></div>
+  </div>
+</header>
+<div class="radar-dock">
+<button type="button" class="math-action dock-switch" data-panel="math" aria-controls="mathPanel">Matemática <span aria-hidden="true">⇄</span></button>
+<nav class="radar-section-nav" aria-label="Seções de Natureza">
+  <a href="#nPlano">Plano</a><a href="#temas">Temas</a><a href="#nFrequencia">Frequência</a><a href="#sas">SAS</a><a href="#apostas">Apostas</a><a href="#nCruzamentos">Cruzamentos</a><a href="#nArmadilhas">Armadilhas</a><a href="#nBncc">BNCC</a>
+</nav>
+</div>
+
+<section id="nPlano">
+  <div class="section-head">
+    <span class="eyebrow">Plano de ataque</span>
+    <h2>4 dias, agrupados por contexto</h2>
+    <p class="lead">Os temas são agrupados por contexto. Os três primeiros dias misturam as matérias e o quarto concentra Biologia. Dentro do dia, comece pelos muito prováveis. Toque num dia para filtrar os temas.</p>
+  </div>
+  <div class="days" id="days"></div>
+  <p class="vespera"><b>Véspera:</b> nada de conteúdo novo. Releia só as armadilhas universais e os contextos cruzados abaixo, durma cedo e confira documento, caneta preta transparente e horário.</p>
+</section>
+
+<section id="nFrequencia">
+  <div class="section-head">
+    <span class="eyebrow">Os dados por trás do radar</span>
+    <h2>O que mais cai nos simulados e o que o PPL 2025 cobrou</h2>
+    <p class="lead">Os três radares cruzaram a prova do ENEM PPL 2025 (aplicada pelo INEP, a referência mais próxima do estilo atual) com as questões de 39 simulados nacionais. Os números abaixo saem diretamente desses materiais.</p>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><b>1 895</b><span>questões de simulado analisadas (606 Fís · 617 Quí · 672 Bio)</span></div>
+    <div class="kpi"><b>39</b><span>simulados de 8 bancas (SAS, Bernoulli, Poliedro, Somos e outras)</span></div>
+    <div class="kpi"><b>162</b><span>contextos reais de 2025–2026 usados nas abordagens</span></div>
+    <div class="kpi"><b id="kPPL">0</b><span>dos 75 temas foram cobrados no PPL 2025</span></div>
+    <div class="kpi"><b>45</b><span>questões no caderno de Natureza, cerca de 15 por matéria</span></div>
+  </div>
+  <div class="charts" id="charts"></div>
+  <p class="note"><span class="ppl" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ink);margin-right:5px"></span>= tema cobrado no PPL 2025. Cada matéria conta de um jeito (Física e Química por subtópico, Biologia por arquétipo de questão), então compare as barras dentro do mesmo painel, não entre painéis. Toque numa barra para abrir o tema; temas sem contagem específica ficaram de fora do gráfico.</p>
+  <div class="ppl-grid" id="pplGrid"></div>
+</section>
+
+<section id="sas">
+  <div class="section-head">
+    <span class="eyebrow">Simulados SAS 2026 · 1º ao 6º · 2º dia</span>
+    <h2>Raio-X da Química em 270 questões de Natureza</h2>
+    <p class="lead">Cada questão dos seis cadernos foi lida, separada por matéria e classificada pelo tema do radar, pelo tipo de comando e pelo contexto.</p>
+  </div>
+  <div class="kpis" id="sasKpis"></div>
+  <div class="charts sas-charts">
+    <div class="chart" style="grid-column:span 2"><div><h3>Química: questões por tema do radar</h3><p class="sub">6 simulados · ordenado pela frequência no SAS · rótulo = nível no radar</p></div><div class="rows" id="sasRows"></div></div>
+    <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+      <div class="chart"><div><h3>Por área</h3><p class="sub">das questões de Química</p></div><div class="rows" id="sasArea"></div></div>
+      <div class="chart"><div><h3>Por tipo de comando</h3><p class="sub">das questões de Química</p></div><div class="rows" id="sasTipo"></div></div>
+      <div class="chart"><div><h3>Radar × SAS</h3><p class="sub">onde as duas fontes divergem</p></div><div id="sasGap" class="mini"></div></div>
+    </div>
+  </div>
+  <div class="section-head" style="margin-top:22px">
+    <h3 style="font-size:17px">Todas as questões de Química</h3>
+  </div>
+  <div class="toolbar" style="position:static;border:0;padding:0">
+    <div class="seg" id="sasF" role="group" aria-label="Simulado"></div>
+    <div class="seg" id="sasT" role="group" aria-label="Tipo">
+      <button data-v="all" aria-pressed="true">Todos os tipos</button><button data-v="c" aria-pressed="false">Cálculo</button><button data-v="s" aria-pressed="false">Seleção por quadro</button><button data-v="k" aria-pressed="false">Conceitual</button>
+    </div>
+    <span class="count" id="sasCount"></span>
+  </div>
+  <p class="table-hint">Deslize a tabela para os lados para ver todas as colunas.</p>
+  <div class="tbl-wrap" tabindex="0" role="region" aria-label="Tabela das questões de Química"><table class="tbl" id="sasTbl"><thead><tr><th>Questão</th><th>Tema do radar</th><th>Contexto</th><th>Comando</th></tr></thead><tbody></tbody></table></div>
+</section>
+
+<section id="apostas">
+  <div class="section-head">
+    <span class="eyebrow">Química · radar + SAS 2026</span>
+    <h2>Apostas temáticas</h2>
+    <p class="lead">Blocos de contexto que se repetem entre os simulados SAS e os temas do radar. Cada aposta traz a evidência (questões e temas), o núcleo a dominar e a forma de comando que mais apareceu.</p>
+  </div>
+  <div class="bets" id="bets"></div>
+</section>
+
+<section id="nCruzamentos">
+  <div class="section-head">
+    <span class="eyebrow">Onde o ENEM pode juntar as matérias</span>
+    <h2>Contextos que aparecem em mais de um radar</h2>
+    <p class="lead">Se um contexto real aparece em dois ou três materiais, ele tem cara de questão interdisciplinar. Domine os dois lados de cada um. Toque num código para abrir o tema.</p>
+  </div>
+  <div class="cross" id="cross"></div>
+</section>
+
+<section id="nArmadilhas">
+  <div class="section-head">
+    <span class="eyebrow">Erros que se repetem nos 75 temas</span>
+    <h2>Armadilhas universais</h2>
+    <p class="lead">Quase todo distrator dos radares cai num destes padrões. Antes de marcar a alternativa, passe por esta lista mentalmente.</p>
+  </div>
+  <div class="traps" id="traps"></div>
+</section>
+
+<section id="nBncc">
+  <div class="section-head">
+    <span class="eyebrow">A base do Fundamental (BNCC)</span>
+    <h2>De onde vem cada tema</h2>
+    <p class="lead">A BNCC organiza Ciências do 1º ao 9º ano em três unidades temáticas. Cruzando as habilidades do 2º ao 9º ano com o radar, dá para ver o que o ENEM aprofunda a partir do Fundamental e o que só existe no Ensino Médio. Cada card de tema mostra o código da habilidade de base.</p>
+  </div>
+  <div class="units" id="units"></div>
+  <div class="gap" id="gapBox"></div>
+</section>
+
+<section id="temas">
+  <div class="section-head">
+    <span class="eyebrow">Explorador</span>
+    <h2>Tema a tema</h2>
+  </div>
+  <div class="toolbar">
+    <div class="seg" id="fOrd" role="group" aria-label="Ordem">
+      <button data-v="plano" aria-pressed="true">Ordem do plano</button><button data-v="freq" aria-pressed="false">Mais cobrados</button>
+    </div>
+    <div class="seg" id="fSub" role="group" aria-label="Matéria">
+      <button data-v="all" aria-pressed="true">Todas</button><button data-v="F" aria-pressed="false">Física</button><button data-v="Q" aria-pressed="false">Química</button><button data-v="B" aria-pressed="false">Biologia</button>
+    </div>
+    <div class="seg" id="fLvl" role="group" aria-label="Nível">
+      <button data-v="all" aria-pressed="true">Todos</button><button data-v="MP" aria-pressed="false">Muito provável</button><button data-v="P" aria-pressed="false">Provável</button><button data-v="A" aria-pressed="false">Aposta</button>
+    </div>
+    <div class="seg" id="fDay" role="group" aria-label="Dia">
+      <button data-v="all" aria-pressed="true">Todos os dias</button><button data-v="1" aria-pressed="false">Dia 1</button><button data-v="2" aria-pressed="false">Dia 2</button><button data-v="3" aria-pressed="false">Dia 3</button><button data-v="4" aria-pressed="false">Dia 4</button>
+    </div>
+    <input type="search" id="q" placeholder="Buscar: metanol, kelvin, Le Chatelier..." aria-label="Buscar tema">
+    <span class="count" id="count"></span>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<footer>Base: Radar ENEM 2026 de Física, Química e Biologia (Heron Andrade, com Atlas Zênite e Apeiron), construídos a partir do ENEM PPL 2025 e de cerca de 1 900 questões de 39 simulados nacionais. Os níveis de confiança seguem os radares de origem. O selo de PPL segue as menções nas justificativas dos temas. Simulados SAS ENEM 2026, 1º ao 6º, 2º dia (Natureza, questões 91 a 135). Habilidades de base: BNCC, Ciências, Ensino Fundamental (2º ao 9º ano).</footer>
+  </div>
+  <div id="mathPanel" class="radar-panel" hidden>
+    <header class="radar-overview">
+      <div class="section-head panel-heading">
+        <span class="eyebrow">Matemática</span>
+        <h2>Progresso da revisão</h2>
+        <p class="lead">Marque os temas conforme você revisar. As fichas e as questões mapeadas ficam disponíveis neste navegador.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><b id="mTotal"></b><span>temas no radar</span></div>
+        <div class="stat"><b id="mMP"></b><span>muito prováveis</span></div>
+        <div class="stat"><b id="mDone"></b><span>revisados</span></div>
+        <div class="progress"><div class="bar"><i id="mProgress"></i></div><span class="count" id="mProgressText" aria-live="polite"></span></div>
+      </div>
+    </header>
+
+    <div class="radar-dock">
+    <button type="button" class="math-action dock-switch" data-panel="nature" aria-controls="naturePanel">Natureza <span aria-hidden="true">⇄</span></button>
+    <nav class="radar-section-nav" aria-label="Seções de Matemática">
+      <a href="#mPlano">Plano</a><a href="#mTemas">Temas</a><a href="#mDados">Frequência</a><a href="#mSas">Simulados e provas</a><a href="#mPadroes">Questões padrão</a><a href="#mInteligentes">Top 30</a><a href="#mCruzamentos">Cruzamentos</a><a href="#mArmadilhas">Armadilhas</a>
+    </nav>
+    </div>
+
+    <section id="mPlano" aria-labelledby="mPlanTitle">
+      <div class="section-head">
+        <span class="eyebrow">Plano de ataque</span><h2 id="mPlanTitle">4 dias, agrupados por contexto</h2>
+        <p class="lead">Comece pelos muito prováveis de cada dia. Toque em um bloco para ver as fichas correspondentes.</p>
+      </div>
+      <div class="days" id="mDays"></div>
+    </section>
+
+    <section id="mDados">
+      <div class="section-head">
+        <span class="eyebrow">Os dados por trás do radar</span><h2>O que mais cai em Matemática</h2>
+        <p class="lead">Os gráficos contam cada questão pelo assunto principal. Nas fichas, a frequência publicada usa o recorte de padrões selecionados para o Radar.</p>
+      </div>
+      <div class="kpis" id="mBaseKpis"></div>
+      <div class="charts" id="mCharts"></div>
+      <p class="note">Cada gráfico usa sua própria escala. Toque num assunto para abrir a ficha relacionada ou consultar suas questões na base.</p>
+    </section>
+
+    <section id="mSas">
+      <div class="section-head">
+        <span class="eyebrow">Simulados e provas · Matemática</span><h2>Raio-X por banca e caderno</h2>
+        <p class="lead">Compare as bancas e os cadernos do mapeamento de Matemática. Selecione uma banca ou um caderno para atualizar os gráficos e a consulta.</p>
+      </div>
+      <div class="math-filters">
+        <label>Banca<select id="mAnalysisBank"></select></label>
+        <label>Caderno<select id="mAnalysisExam"></select></label>
+      </div>
+      <div class="kpis" id="mSasKpis"></div>
+      <p class="note math-scope-note" id="mAnalysisNote"></p>
+      <div class="charts" id="mSasCharts"></div>
+      <details class="math-extra-charts">
+        <summary>Ver perfil das questões</summary>
+        <div class="charts" id="mProfileCharts"></div>
+      </details>
+      <p class="note">Os valores das barras são contagens no recorte selecionado. Clique em uma barra para abrir as questões correspondentes.</p>
+      <div class="chart math-chart math-subhead" id="mBankComparison">
+        <h3>Comparar bancas e cadernos</h3>
+        <div class="math-filters">
+          <label>Comparar por<select id="mComparisonGroup"><option value="bank">Banca</option><option value="exam">Caderno</option></select></label>
+          <label>Indicador<select id="mComparisonMetric"></select></label>
+        </div>
+        <div class="rows" id="mComparisonRows"></div>
+        <p class="note" id="mComparisonNote"></p>
+      </div>
+      <div id="mQuestaoBase" class="section-head math-subhead"><h3>Consulta de questões mapeadas</h3></div>
+      <div id="mEvidenceReturn" class="evidence-return" hidden>
+        <p id="mEvidenceLabel"></p><button type="button" class="math-action" id="mBackToGraph">Voltar ao gráfico</button>
+      </div>
+      <div class="math-filters" id="mQuestionFilters">
+        <label>Banca<select id="mBank"></select></label>
+        <label>Caderno<select id="mExam"></select></label>
+        <label>Área<select id="mQuestionArea"></select></label>
+        <label>Tipo de cobrança<select id="mQuestionType"></select></label>
+        <label class="math-search">Buscar questão<input id="mQuestionSearch" type="search" placeholder="Q163, assunto, habilidade ou contexto"></label>
+        <span class="count" id="mQuestionCount" aria-live="polite"></span>
+      </div>
+      <p class="table-hint">Deslize a tabela para os lados para ver todas as colunas.</p>
+      <div class="tbl-wrap" tabindex="0" role="region" aria-label="Tabela das questões de Matemática"><table class="tbl math-table">
+        <thead><tr><th>Questão</th><th>Assunto</th><th>Cobrança</th><th>Habilidade</th><th>Arquétipo</th></tr></thead>
+        <tbody id="mQuestions"></tbody>
+      </table></div>
+      <div class="math-pager" id="mQuestionPages" aria-label="Páginas da base"></div>
+    </section>
+
+    <section id="mPadroes">
+      <div class="section-head">
+        <span class="eyebrow">Questões padrão</span><h2>Os roteiros que se repetem</h2>
+        <p class="lead">Um arquétipo reúne questões com a mesma estrutura de cobrança em pelo menos três cadernos. Abra o roteiro para ver como reconhecer o padrão e montar a conta.</p>
+      </div>
+      <div class="kpis" id="mArchKpis"></div>
+      <div class="math-filters" id="mArchFilters">
+        <label>Área<select id="mArchArea"></select></label>
+        <label class="math-search">Buscar padrão<input id="mArchSearch" type="search" placeholder="A03, trabalho e tempo, porcentagem"></label>
+        <span class="count" id="mArchCount" aria-live="polite"></span>
+      </div>
+      <div class="math-list" id="mArch"></div>
+      <div class="math-pager" id="mArchPages" aria-label="Páginas dos arquétipos"></div>
+    </section>
+
+    <section id="mInteligentes">
+      <div class="section-head">
+        <span class="eyebrow">Questões inteligentes</span><h2>Top 30 · A sacada da questão</h2>
+        <p class="lead">Seleção editorial de 225 candidatas, avaliadas em cinco eixos. Abra o enunciado para tentar a questão. A sacada, a resolução e o gabarito ficam em um detalhe separado.</p>
+      </div>
+      <div class="math-filters">
+        <label>Área<select id="mTopArea"></select></label><span class="count" id="mTopCount" aria-live="polite"></span>
+      </div>
+      <div class="bets" id="mTop"></div>
+    </section>
+
+    <section id="mCruzamentos">
+      <div class="section-head">
+        <span class="eyebrow">Conexões dentro de Matemática</span><h2>O que já caiu junto e como pode cair</h2>
+        <p class="lead">As frequências vêm das questões mapeadas. Os cenários são propostas de treino da Etapa 4, com contexto, comando e armadilha.</p>
+      </div>
+      <div class="kpis" id="mCrossKpis"></div>
+      <div class="chart" id="mPairs"></div>
+      <div class="math-filters math-subhead" id="mCrossFilters">
+        <label>Tipo de cenário<select id="mCrossType"></select></label>
+        <label>Classificação da fonte<select id="mCrossLevel"></select></label>
+        <span class="count" id="mCrossCount" aria-live="polite"></span>
+      </div>
+      <div class="cross" id="mScenarios"></div>
+    </section>
+
+    <section id="mArmadilhas">
+      <div class="section-head"><span class="eyebrow">Erros que se repetem</span><h2>Armadilhas universais de Matemática</h2></div>
+      <div class="traps" id="mTraps"></div>
+    </section>
+
+    <section id="mTemas">
+      <div class="section-head"><span class="eyebrow">Explorador</span><h2>Tema a tema</h2></div>
+      <div class="toolbar math-filters" id="mTopicFilters">
+        <label>Ordem<select id="mOrder"><option value="plan">Ordem do plano</option><option value="frequency">Frequência no Radar</option></select></label>
+        <label>Área<select id="mArea"></select></label>
+        <label>Nível<select id="mLevel"></select></label>
+        <label>Dia<select id="mDay"></select></label>
+        <label class="math-search">Buscar tema<input type="search" id="mSearch" placeholder="M01, proporção, decibéis"></label>
+        <span class="count" id="mCount" aria-live="polite"></span>
+      </div>
+      <div class="grid" id="mGrid"></div>
+    </section>
+
+    <footer id="mSources"></footer>
+  </div>
+  <dialog id="mQuestionDialog" aria-labelledby="mDialogTitle">
+    <div class="question-panel">
+      <div class="math-dialog-head"><h2 id="mDialogTitle"></h2><button type="button" class="math-action" id="mDialogClose" autofocus>Fechar</button></div>
+      <div id="mDialogBody" tabindex="0" role="region" aria-label="Enunciado e referências da questão"></div>
+    </div>
+  </dialog>
+
+</main>
+
+</body>
+</html>

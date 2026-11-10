@@ -1,0 +1,242 @@
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+}
+
+body {font-size: 1rem}
+.wrap {
+  padding-block-start: calc(clamp(12px, 2vw, 28px) + var(--safe-top));
+  padding-block-end: calc(3rem + var(--safe-bottom));
+  padding-inline: max(clamp(10px, 3vw, 16px), var(--safe-left)) max(clamp(10px, 3vw, 16px), var(--safe-right));
+}
+.wrap, .radar-panel, .radar-panel > *, .brand-copy, .brand-shortcut, .kpi, .stat {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.skip-link {
+  position: fixed;
+  z-index: 30;
+  top: var(--safe-top);
+  left: max(1rem, var(--safe-left));
+  padding: .65rem 1rem;
+  background: var(--surface);
+  color: var(--ink);
+  transform: translateY(-200%);
+}
+.skip-link:focus {transform: none}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+:where(a, button, input, select, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--brand-purple-ink);
+  outline-offset: 2px;
+}
+
+.progress-transfer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .6rem 1rem;
+  padding: .8rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+}
+.progress-transfer h2 {font-size: 1rem}
+.progress-transfer .lead, .progress-message {font-size: .875rem}
+.progress-actions {display: flex; flex-wrap: wrap; gap: .5rem}
+.progress-message {flex-basis: 100%; color: var(--brand-purple-ink)}
+.progress-message:empty {display: none}
+
+.radar-dock {
+  position: sticky;
+  top: var(--safe-top);
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  padding: 4px 0;
+  margin-block-start: -1rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 calc(0px - var(--safe-top)) 0 var(--safe-top) var(--bg);
+}
+.radar-dock .dock-switch {
+  flex: none;
+  border-color: var(--brand-purple-ink);
+  font-weight: 700;
+  max-width: 45%;
+}
+.radar-dock .radar-section-nav {
+  position: static;
+  min-width: 0;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin: 0;
+  padding: 4px;
+  border: 0;
+  overscroll-behavior-inline: contain;
+}
+.radar-dock .radar-section-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+.radar-panel > section[id], #mQuestaoBase, .source-list li, .radar-panel .card {
+  scroll-margin-top: calc(var(--safe-top) + var(--radar-nav-height, 60px) + 12px);
+}
+.radar-panel .toolbar {position: static}
+
+.chart-entry {
+  --evidence-size: 2.25rem;
+  position: relative;
+}
+.chart-entry .row {width: calc(100% - var(--evidence-size) - .15rem)}
+.chart-entry .row, .math-chart .row {
+  min-width: 0;
+  grid-template-columns: minmax(0, 1.8fr) minmax(22px, 1fr) minmax(2ch, auto);
+}
+.chart-entry div.row {cursor: default}
+.row .lbl, .math-chart .row .lbl {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  line-height: 1.3;
+}
+.chart-entry .row .lbl .lvl {display: inline-block}
+.chart-evidence summary {
+  position: absolute;
+  inset: 0 0 auto auto;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  width: var(--evidence-size);
+  min-height: var(--evidence-size);
+  color: var(--brand-purple-ink);
+  border-radius: 6px;
+  list-style: none;
+}
+.chart-evidence summary::-webkit-details-marker {display: none}
+.chart-evidence[open] summary {background: var(--brand-soft)}
+.chart-evidence-text {
+  padding: .65rem;
+  margin-block: .15rem .4rem;
+  border-inline-start: 2px solid var(--brand-lavender);
+  background: var(--brand-tint);
+  font-size: .875rem;
+  overflow-wrap: anywhere;
+}
+.chart-evidence:not([open]) .chart-evidence-text {display: none}
+.sas-chip {max-width: 100%}
+.sas-chip > summary {display: list-item; cursor: pointer}
+.sas-chip > p {padding: .35rem 0; overflow-wrap: anywhere}
+.tip {max-width: min(300px, calc(100% - 16px)); overflow-wrap: anywhere}
+
+.tbl-wrap {max-height: min(32rem, 65vh); overscroll-behavior-inline: contain}
+.tbl {min-width: 35rem}
+.math-table {min-width: 43rem}
+.table-hint {font-size: .8125rem; color: var(--muted)}
+.formula {font-size: .875rem}
+.card h3, .bet h3 {font-size: 1.0625rem}
+.rev, .card li, .bet p, details, .note, .bncc, .tbl {font-size: .875rem}
+.row, .chart .sub, .math-action, .check {font-size: .8125rem}
+.bet .strength {align-items: center; flex-wrap: wrap; justify-content: flex-end; font-size: .75rem}
+.math-block h4, .math-note {font-size: .875rem}
+.source-list {padding-inline-start: 1.25rem; margin-block: .5rem 0}
+.source-list li {padding: .5rem 0}
+.source-list span {display: block}
+
+html:has(#mQuestionDialog[open]) {overflow: hidden}
+#mQuestionDialog {
+  padding: 0;
+  overflow: hidden;
+  max-height: none;
+  width: min(760px, calc(100% - 2rem));
+}
+.question-panel {
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  max-height: 90dvh;
+}
+.math-dialog-head {
+  align-items: center;
+  gap: .75rem;
+  margin: 0;
+  padding: .65rem 1rem;
+  border-bottom: 1px solid var(--line);
+}
+.math-dialog-head h2 {min-width: 0; font-size: 1.125rem; overflow-wrap: anywhere}
+#mDialogBody {
+  overflow: auto;
+  overscroll-behavior: contain;
+  min-height: 0;
+  padding: .75rem 1rem 1rem;
+  overflow-wrap: anywhere;
+}
+.crop-scroll {overflow: auto; overscroll-behavior-inline: contain}
+.crop-scroll img {height: auto}
+.crop-scroll.zoomed img {max-width: none; width: max(100%, 44rem); margin: 0}
+.crop-toggle {margin-bottom: .5rem}
+
+.math-action, .radar-dock a, .radar-motion-toggle, .view-nav button, .chart-entry .row {
+  min-height: 2.5rem;
+}
+.radar-motion-toggle:disabled {cursor: default; opacity: .86}
+.math-filters :is(select, input[type="search"]), .toolbar > input[type="search"] {
+  height: auto;
+  min-height: 2.75rem;
+  font-size: 1rem;
+}
+.check {min-height: 2.75rem}
+.check input {width: 1.125rem; height: 1.125rem}
+
+@media (max-width: 48rem), (pointer: coarse) {
+  .radar-dock .math-action, .radar-dock a, .radar-motion-toggle, .radar-masthead .view-nav button,
+  .math-action, button.tag, .seg button, .chart button.row, .chart-evidence summary, .card summary {
+    min-height: 2.75rem;
+  }
+  .chart-entry {--evidence-size: 2.75rem}
+  .card summary {align-content: center}
+  .stats {gap: .4rem}
+  .kpis {grid-template-columns: repeat(auto-fit, minmax(min(100%, 8.25rem), 1fr))}
+  .chart {padding: .625rem}
+  .brand-shortcut-title, .radar-dock a, .radar-dock .dock-switch {font-size: .8125rem}
+  .radar-dock .dock-switch {padding-inline: .45rem}
+}
+
+@media (max-width: 40rem), (orientation: landscape) and (max-height: 28rem) {
+  #mQuestionDialog {
+    width: auto;
+    margin: 0;
+    inset: var(--safe-top) var(--safe-right) var(--safe-bottom) var(--safe-left);
+    height: auto;
+    border-radius: 0;
+  }
+  .question-panel {height: 100%; max-height: none}
+}
+
+@media (max-width: 36rem) {
+  .wrap {gap: 1rem}
+  .radar-overview .stat span, .kpi span {font-size: .75rem}
+  .brand-copy h1 {font-size: clamp(1.9rem, 10vw, 3.2rem)}
+  .brand-area {font-size: clamp(1.25rem, 6vw, 1.8rem)}
+  .brand-description {font-size: .875rem}
+  .brand-masthead .view-nav button {font-size: .875rem}
+  .brand-radar-shell {flex-wrap: wrap}
+  .radar-motion-toggle {font-size: .8125rem; white-space: normal}
+  .radar-dock .dock-switch span {display: none}
+  .math-filters label {flex: 1 1 min(100%, 9rem)}
+  .math-filters label.math-search {flex-basis: 100%}
+  .math-dialog-head, #mDialogBody {padding-inline: .75rem}
+}
